@@ -1,7 +1,7 @@
 Newz Application using Next js , Tailwind Css ,Redux , Lottie View  #Inprogress
 
 Application Link : https://next-js-example-snowy.vercel.app/
-
+Deployed  : https://vercel.com/
 ## Running locally in development mode
 
 To get started, just clone the repository and run `npm install && npm run dev`:
@@ -27,3 +27,9 @@ Note: If you are already running a webserver on port 3000 (e.g. Macs usually hav
 ## Configuring
 
 Get an API key from  https://newsapi.org and Add the same Key to .env file
+
+
+## Deployment
+
+Refer : https://nextjs.org/docs/deployment
+
