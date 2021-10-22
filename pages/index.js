@@ -1,33 +1,19 @@
 import React from "react";
-import Card from "../components/Card";
-import Navbar from "../components/Navbar";
+import Newz from "../components/Newz";
+import NewsService from "../service/NewsService";
 
-export default function index({ news }) {
-  return (
-    <div className="container mx-auto overflow-x-hidden">
-      <Navbar />
+export default function index({ news, searchNews, isSearch }) {
 
-      <div className="flex flex-wrap overflow-hidden py-10 px-10  sm:-mx-2 md:-mx-1 lg:-mx-3 xl:-mx-2">
-        {news.map((newz, index) => (
-          <Card newz={newz} key={index} />
-        ))}
-      </div>
-    </div>
-  );
+  const showNews = isSearch != "" && searchNews && searchNews.length > 0 ? searchNews : news;
+  return <Newz news={showNews} />;
 }
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}`
-  );
-  const news = await res.json();
-
+  const response = await NewsService.GET_HEADLINES(1)
   return {
     props: {
-      news: news ? news.articles : [],
+      news: response.data ? response.data.articles : [],
     },
-    revalidate :10
+    revalidate: 10,
   };
 }

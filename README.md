@@ -1,7 +1,9 @@
 Newz Application using Next js , Tailwind Css ,Redux , Lottie View  #Inprogress
 
-Application Link : https://next-js-example-snowy.vercel.app/
-Deployed  : https://vercel.com/
+Application Link  https://next-js-example-snowy.vercel.app/
+
+Deployed  https://vercel.com/
+
 ## Running locally in development mode
 
 To get started, just clone the repository and run `npm install && npm run dev`:
