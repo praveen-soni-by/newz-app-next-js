@@ -1,4 +1,4 @@
-Newz Application using Next js , Tailwind Css ,Redux  #Inprogress
+Newz Application using Next js , Tailwind Css ,Redux , Lottie View  #Inprogress
 
 Application Link : https://next-js-example-snowy.vercel.app/
 
