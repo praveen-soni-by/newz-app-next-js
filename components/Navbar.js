@@ -43,12 +43,12 @@ export default function Navbar() {
           </div>
           <div className=" flex item-center">
             <div className="bg-white   flex  justify-center rounded-md shadow md:w-96 sm:w-full xxm:w-full ">
-              <div className="w-12 h-12 flex items-center justify-center">
+              <span className="w-12 h-12 flex items-center justify-center">
                 <FontAwesomeIcon
                   color="primary"
                   icon={faSearch}
                 ></FontAwesomeIcon>
-              </div>
+              </span>
               <input
                 className=" rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none"
                 id="search"

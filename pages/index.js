@@ -4,12 +4,12 @@ import Navbar from "../components/Navbar";
 
 export default function index({ news }) {
   return (
-    <div>
+    <div className="container mx-auto overflow-x-hidden">
       <Navbar />
 
-      <div className="flex flex-wrap -mx-1 py-10 px-10 overflow-hidden sm:-mx-2 md:-mx-1 lg:-mx-3 xl:-mx-2">
+      <div className="flex flex-wrap overflow-hidden py-10 px-10  sm:-mx-2 md:-mx-1 lg:-mx-3 xl:-mx-2">
         {news.map((newz, index) => (
-          <Card newz={newz} key={index}/>
+          <Card newz={newz} key={index} />
         ))}
       </div>
     </div>
@@ -28,5 +28,6 @@ export async function getStaticProps() {
     props: {
       news: news ? news.articles : [],
     },
+    revalidate :10
   };
 }
