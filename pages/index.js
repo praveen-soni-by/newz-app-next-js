@@ -5,7 +5,7 @@ import NewsService from "../service/NewsService";
 export default function index({ news, searchNews, isSearch }) {
 
   const showNews = isSearch != "" && searchNews && searchNews.length > 0 ? searchNews : news;
-  return <Newz news={showNews} />;
+  return <Newz news={showNews} />
 }
 
 export async function getStaticProps() {

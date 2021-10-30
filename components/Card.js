@@ -2,9 +2,10 @@ import React from "react";
 //To replace Html tag in response
 const regex = /(<([^>]+)>)/ig;
 
-const Card = React.forwardRef(({ newz }, ref) => {
+//const Card = React.forwardRef(({ newz }, ref) => {
+const Card = ({ newz }) => {
   return (
-    <div ref={ref} className="w-full xx300:mb-4  h-90 sm:my-4 lg:my-3 lg:px-3 lg:w-1/4 xl:my-3 xl:px-3 xl:w-1/4 md:w-1/3 md:px-3   sm:px-3 sm:w-1/2
+    <div  className="w-full xx300:mb-4  h-90 sm:my-4 lg:my-3 lg:px-3 lg:w-1/4 xl:my-3 xl:px-3 xl:w-1/4 md:w-1/3 md:px-3   sm:px-3 sm:w-1/2
      ">
       <div className="rounded overflow-hidden shadow-lg">
         <img className="w-full" src={newz.urlToImage} alt="images" />
@@ -30,6 +31,7 @@ const Card = React.forwardRef(({ newz }, ref) => {
       </div>
     </div>
   )
-});
+}
+
 
 export default Card;

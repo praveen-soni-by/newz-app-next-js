@@ -10,10 +10,11 @@ import { useRouter } from 'next/router';
 import Navbar from "../components/Navbar"
 import Loader from "../components/Loader";
 import NewsService from "../service/NewsService";
+import { withHeadTitle } from "../components/hoc/withHeadTitle";
 
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   const [value, setValue] = useState("");
   const [searchNews, setSearchNewz] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -70,3 +71,6 @@ export default function MyApp({ Component, pageProps }) {
     </div>
   )
 }
+
+
+export default withHeadTitle(MyApp, "Home")

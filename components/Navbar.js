@@ -8,6 +8,15 @@ import { faTimes, faSearch, faBars } from "@fortawesome/free-solid-svg-icons"; /
 export default function Navbar(props) {
   const router = useRouter();
   const [isNavExpanded, setNavExpanded] = React.useState();
+
+  React.useEffect(() => {
+    toggle();
+  }, [router.asPath])
+
+  const toggle = () => {
+    setNavExpanded(!isNavExpanded);
+  }
+
   return (
     <nav className="px-6 py-2 bg-white shadow-md md:flex  ">
       <div className="flex justify-between items-center ">
@@ -16,7 +25,7 @@ export default function Navbar(props) {
         </div>
         <div className="md:hidden">
           <button id="hamburger"
-            onClick={() => setNavExpanded(!isNavExpanded)}
+            onClick={toggle}
             className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarId"
             aria-controls="navbarId" aria-expanded="false" aria-label="Toggle navigation">
             <FontAwesomeIcon

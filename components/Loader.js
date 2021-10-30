@@ -13,10 +13,10 @@ export default function Loader() {
   };
 
   return (
-    <div className="flex w-full justify-center content-center">
+    <div className="flex h-3/5	 w-full justify-center content-center">
       <Lottie
 
-        options={defaultOptions} height={100} width={100} />
+        options={defaultOptions} height={60} width={60} />
     </div>
   );
 }
