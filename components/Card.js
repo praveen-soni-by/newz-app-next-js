@@ -5,15 +5,15 @@ const regex = /(<([^>]+)>)/ig;
 //const Card = React.forwardRef(({ newz }, ref) => {
 const Card = ({ newz }) => {
   return (
-    <div  className="w-full xx300:mb-4  h-90 sm:my-4 lg:my-3 lg:px-3 lg:w-1/4 xl:my-3 xl:px-3 xl:w-1/4 md:w-1/3 md:px-3   sm:px-3 sm:w-1/2
+    <div  className="w-full xx300:mb-4 sm:my-4 lg:my-3 lg:px-3 lg:w-1/4 xl:my-3 xl:px-3 xl:w-1/4 md:w-1/3 md:px-3   sm:px-3 sm:w-1/2
      ">
       <div className="rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={newz.urlToImage} alt="images" />
+        <img className="w-full h-44" src={newz.urlToImage} alt="images" />
         <div className="px-6 py-4">
           <div className="font-semibold text-xs mb-2 font-sans	text-base">
             {newz.title}
           </div>
-          <p className="text-gray-700 text-base line-clamp-3 font-sans	">
+          <p className="text-gray-700 flex-wrap mt-auto text-base line-clamp-3 font-sans	">
             {newz.description?.replace(regex, '')}
           </p>
         </div>

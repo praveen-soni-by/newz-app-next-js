@@ -7,15 +7,12 @@ import { faTimes, faSearch, faBars } from "@fortawesome/free-solid-svg-icons"; /
 
 export default function Navbar(props) {
   const router = useRouter();
-  const [isNavExpanded, setNavExpanded] = React.useState();
-
-  React.useEffect(() => {
-    toggle();
-  }, [router.asPath])
+  const [isNavExpanded, setNavExpanded] = React.useState(false);
 
   const toggle = () => {
     setNavExpanded(!isNavExpanded);
   }
+
 
   return (
     <nav className="px-6 py-2 bg-white shadow-md md:flex  ">
@@ -40,15 +37,14 @@ export default function Navbar(props) {
         {`${isNavExpanded ? 'show ' : ' hidden'}  transition ease-out duration-700 w-full pb-2 md:flex md:items-center md:justify-between md:pb-0`}>
 
         <ul className="flex flex-col px-2 md:flex-row">
-          <li className={`${router.asPath === '/' ? ' bg-gray-100  ' : ''}  xx300:mt-4 py-2 px-2 text-gray-800   rounded hover:bg-gray-900 hover:bg-gray-900 hover:text-gray-100 hover:font-medium md:mx-2 `}>
-            <Link
-              href="/">Home</Link>
+          <li className={`${router.asPath === '/' ? ' bg-gray-100  font-bold  ' : ''}  xx300:mt-4 py-2 px-2 text-gray-800   rounded hover:bg-gray-900 hover:bg-gray-900 hover:text-gray-100 hover:font-medium md:mx-2 `}>
+            <Link className='w-full' passHref={true}
+              href="/"><div className='w-full  cursor-pointer'>Home</div></Link>
           </li>
-          <li className={`${router.asPath === '/entertainment' ? '  bg-gray-100  ' : ''}  xx300:mt-4 text-gray-800  py-2 px-2  rounded hover:bg-gray-900 hover:bg-gray-900 hover:text-gray-100 hover:font-medium md:mx-2 `}>
+          <li className={`${router.asPath === '/entertainment' ? '  bg-gray-100 font-bold  ' : ''}  xx300:mt-4 text-gray-800  py-2 px-2  rounded hover:bg-gray-900 hover:bg-gray-900 hover:text-gray-100 hover:font-medium md:mx-2 `}>
+            <Link className='w-full' passHref={true}
+              href="/entertainment"><div className='w-full cursor-pointer'>Entertainment</div></Link>
 
-            <Link
-
-              href="/entertainment">Entertainment</Link>
           </li>
         </ul>
         {router.asPath == '/' ?
